@@ -1,6 +1,5 @@
 tap_install:
   values:
-    shared:
     ceip_policy_disclosed: true
 
     profile: full
