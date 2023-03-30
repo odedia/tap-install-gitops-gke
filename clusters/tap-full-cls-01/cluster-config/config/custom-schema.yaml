@@ -32,5 +32,5 @@ custom:
   tbs_full_dependencies:
     enabled: true
     pkgr_version: "1.10.6"
-    pkgr_repo_url: registry.tanzu.vmware.com/tap/tbs-full-deps
+    pkgr_repo_url: registry.tanzu.vmware.com/tanzu-application-platform/full-tbs-deps-package-repo
   
