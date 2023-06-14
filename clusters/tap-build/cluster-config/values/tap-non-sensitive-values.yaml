@@ -39,3 +39,5 @@ tap_install:
         ingressEnabled: true
         host: appliveview.viewtlv.tanzutime.com
         port: "80"
+    excluded_packages:
+      - contour.tanzu.vmware.com
