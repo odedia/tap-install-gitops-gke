@@ -31,8 +31,6 @@ tap_install:
     contour:
       envoy:
         service:
-          annotations:      
-            external-dns.alpha.kubernetes.io/hostname: *.iteratetlv.tanzutime.com
           type: LoadBalancer
 
     cnrs:
