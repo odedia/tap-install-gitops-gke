@@ -2,7 +2,7 @@
 
 ### Pre-Requisites
 
-gcloud beta container clusters create tap-iterate --region europe-west2 --cluster-version 1.26.5-gke.1200 --machine-type "e2-standard-8" --num-nodes "3" --node-locations europe-west2-a
+gcloud beta container clusters create tap-build --region europe-west2 --cluster-version 1.26.5-gke.1200 --machine-type "e2-standard-8" --num-nodes "3" --node-locations europe-west2-a
 
 See also: SETUP-SECRETS.md "Pre-Requisites"
 
