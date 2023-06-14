@@ -41,3 +41,20 @@ tap_install:
         port: "80"
     excluded_packages:
       - contour.tanzu.vmware.com
+    namespace_provisioner:
+      controller: false
+      additional_sources:
+      - git:
+          ref: origin/main
+          subPath: testing-scanning-supplychain
+          url: https://github.com/odedia/tap-ns-provisioner
+          # secretRef section is only needed if connecting to a Private Git repo
+          secretRef:
+            name: git-https
+            namespace: tap-install
+            create_export: true
+        path: _ytt_lib/testing-scanning-supplychain-setup
+      gitops_install:
+        ref: origin/main
+        subPath: gitops-install
+        url: https://github.com/odedia/tap-ns-provisioner
