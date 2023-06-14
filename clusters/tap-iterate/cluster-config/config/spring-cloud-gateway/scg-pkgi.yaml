@@ -1,6 +1,6 @@
 #@ load("@ytt:data", "data")
 ---
-#@ if data.values.custom.spring_cloud_gateway.enabled: 
+#@ if data.values.custom.operators.spring_cloud_gateway.enabled: 
 apiVersion: packaging.carvel.dev/v1alpha1
 kind: PackageInstall
 metadata:
@@ -15,5 +15,5 @@ spec:
   packageRef:
     refName: spring-cloud-gateway.tanzu.vmware.com
     versionSelection:
-      constraints: #@ data.values.tap_install.version.package_version
+      constraints: #@ data.values.custom.operators.spring_cloud_gateway.package_version
 #@ end

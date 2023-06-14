@@ -7,6 +7,10 @@ custom:
       enabled: true
       provider_version: "v0.6.0"
       provider_package: "crossplane/provider-sql"
+    spring_cloud_gateway:
+      enabled: true
+      provider_version: "2.0.3"
+      provider_package: spring-cloud-gateway.tanzu.vmware.com
     tanzu_data_services:
       pkgr_version: "1.9.0"
       pkgr_repo_url: "registry.tanzu.vmware.com/packages-for-vmware-tanzu-data-services/tds-packages"
@@ -33,8 +37,4 @@ custom:
     enabled: true
     pkgr_version: "1.10.10"
     pkgr_repo_url: registry.tanzu.vmware.com/tanzu-application-platform/full-tbs-deps-package-repo
-  spring_cloud_gateway:
-    enabled: true
-    pkgr_version: "2.0.3"
-    pkgr_repo_url: spring-cloud-gateway.tanzu.vmware.com
   
