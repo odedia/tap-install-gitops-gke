@@ -5,7 +5,7 @@ metadata:
     kapp.k14s.io/change-group: compositions
     kapp.k14s.io/change-rule.0: "upsert after upserting pkgi"
     kapp.k14s.io/change-rule.1: "delete before deleting pkgi"
-  name: crossplanerb
+  name: crossplane-k8s-crb
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
@@ -13,4 +13,21 @@ roleRef:
 subjects:
 - kind: ServiceAccount
   name: provider-kubernetes
+  namespace: crossplane-system
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  annotations:
+    kapp.k14s.io/change-group: compositions
+    kapp.k14s.io/change-rule.0: "upsert after upserting pkgi"
+    kapp.k14s.io/change-rule.1: "delete before deleting pkgi"
+  name: crossplane-helm-crb
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: cluster-admin
+subjects:
+- kind: ServiceAccount
+  name: provider-helm
   namespace: crossplane-system
