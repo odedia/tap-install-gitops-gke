@@ -10,6 +10,10 @@ custom:
     credentials:
       accessKey: ""
       secretKey: ""
+  gcp:
+    credentials:
+      project_id: ""
+      service_account_json_in_base64: ""
   operators:
     crossplane_sql_provider:
       enabled: true

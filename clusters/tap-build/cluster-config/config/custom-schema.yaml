@@ -7,6 +7,10 @@ custom:
     github_token: ""
   acme:
     email: ""
+  gcp:
+    credentials:
+      project_id: ""
+      service_account_json_in_base64: ""
   aws:
     region: eu-west-1
     route_fifty_three_zone_id: ""
