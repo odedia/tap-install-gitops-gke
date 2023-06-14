@@ -7,6 +7,7 @@ tap_install:
       exclude_dependencies: true
 
     shared:
+      ingress_domain: apps.iteratetlv.tanzutime.com
       ingress_issuer: letsencrypt-contour-cluster-issuer
 
     supply_chain: basic
@@ -14,10 +15,6 @@ tap_install:
     api_auto_registration:
       tap_gui_url: https://tap-gui.viewtlv.tanzutime.com
       cluster_name: tap-iterate
-
-    appsso:
-      domain_name: apps.iteratetlv.tanzutime.com
-      domain_template: "{{.Name}}-{{.Namespace}}.{{.Domain}}"
 
     ootb_supply_chain_basic:
       registry:
@@ -31,11 +28,6 @@ tap_install:
       envoy:
         service:
           type: LoadBalancer
-
-    cnrs:
-      domain_name: apps.iteratetlv.tanzutime.com
-      domain_template: "{{.Name}}-{{.Namespace}}.{{.Domain}}"
-      default_tls_secret: contour/letsencrypt-contour-cluster-issuer
 
     grype:
       namespace: demos
