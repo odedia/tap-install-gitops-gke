@@ -9,8 +9,8 @@ custom:
       provider_package: "crossplane/provider-sql"
     spring_cloud_gateway:
       enabled: true
-      provider_version: "2.0.3"
-      provider_package: spring-cloud-gateway.tanzu.vmware.com
+      package_version: "2.0.3"
+      package_name: spring-cloud-gateway.tanzu.vmware.com
     tanzu_data_services:
       pkgr_version: "1.9.0"
       pkgr_repo_url: "registry.tanzu.vmware.com/packages-for-vmware-tanzu-data-services/tds-packages"

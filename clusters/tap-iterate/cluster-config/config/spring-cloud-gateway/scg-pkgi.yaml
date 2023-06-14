@@ -13,7 +13,7 @@ metadata:
 spec:
   serviceAccountName: tap-installer-sa
   packageRef:
-    refName: spring-cloud-gateway.tanzu.vmware.com
+    refName: #@ data.values.custom.operators.spring_cloud_gateway.package_name 
     versionSelection:
       constraints: #@ data.values.custom.operators.spring_cloud_gateway.package_version
 #@ end
