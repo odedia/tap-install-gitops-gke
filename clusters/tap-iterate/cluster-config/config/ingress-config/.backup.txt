@@ -1,0 +1,29 @@
+#@ load("@ytt:data", "data")
+#@ load("@ytt:base64", "base64")
+---
+apiVersion: v1
+data:
+  service-account.json: #@ data.values.custom.gcp.credentials.service_account_json_in_base64
+kind: Secret
+metadata:
+  name: clouddns-dns01-solver-svc-acct
+  namespace: cert-manager
+---
+apiVersion: cert-manager.io/v1
+kind: ClusterIssuer
+metadata:
+  name: letsencrypt-contour-cluster-issuer
+spec:
+  acme:
+    email: #@ data.values.custom.acme.email
+    server: https://acme-v02.api.letsencrypt.org/directory
+    privateKeySecretRef:
+      name: letsencrypt-prod-account-key
+    solvers:
+    - dns01:
+        cloudDNS:
+          # The ID of the GCP project
+          project: #@ data.values.custom.gcp.project_id
+          serviceAccountSecretRef:
+            name: tap-install/clouddns-dns01-solver-svc-acct
+            key: service-account.json
