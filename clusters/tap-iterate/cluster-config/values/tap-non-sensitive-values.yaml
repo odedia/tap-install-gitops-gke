@@ -4,7 +4,6 @@ tap_install:
     profile: iterate
     ceip_policy_disclosed: true
     buildservice:
-      enable_automatic_dependency_updates: false
       exclude_dependencies: true
 
     shared:
