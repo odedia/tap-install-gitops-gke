@@ -1,6 +1,6 @@
 #@ load("@ytt:data", "data")
 ---
-#@ if data.values.custom.spring_cloud_gateway.enabled:
+#@ if data.values.custom.spring_cloud_gateway.enabled: 
 apiVersion: packaging.carvel.dev/v1alpha1
 kind: PackageInstall
 metadata:
