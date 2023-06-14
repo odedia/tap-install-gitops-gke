@@ -67,12 +67,13 @@ spec:
         args:
         - --source=service
         - --source=ingress
+        - --source=contour-httpproxy
         - #@ "--domain-filter=" + str(data.values.tap_install.values.shared.ingress_domain)
         - --provider=aws
         - --aws-zone-type=public 
         - --aws-prefer-cname
         - --policy=upsert-only
-        - --txt-prefix=txt 
+        - --txt-prefix=txt
         - #@ "--txt-owner-id=" + str(data.values.custom.aws.route_fifty_three_zone_id)  
         - --registry=txt
         env:
