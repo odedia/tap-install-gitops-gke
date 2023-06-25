@@ -13,7 +13,6 @@ custom:
     credentials:
       accessKey: ""
       secretKey: ""
-    crossplane_creds_secret: ""
   gcp:
     credentials:
       project_id: ""
@@ -27,6 +26,7 @@ custom:
       enabled: true
       provider_version: "v0.33.0"
       provider_package: "crossplane/provider-aws"
+      crossplane_creds_secret: ""
     spring_cloud_gateway:
       enabled: true
       package_version: "2.0.3"
