@@ -10,6 +10,7 @@ custom:
     credentials:
       accessKey: ""
       secretKey: ""
+    crossplane_creds_secret: ""
   gcp:
     credentials:
       project_id: ""

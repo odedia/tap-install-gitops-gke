@@ -11,4 +11,12 @@ metadata:
    kapp.k14s.io/change-rule.1: "delete before deleting pkgi"
 spec:
  package: #@ "xpkg.upbound.io/crossplane-contrib/provider-aws:{}".format(data.values.custom.operators.crossplane_aws_provider.provider_version)
+---
+apiVersion: v1
+data:
+  creds: #@ "{}".format(data.values.custom.operators.crossplane_aws_provider.crossplane_creds_secret)
+kind: Secret
+metadata:
+  name: aws-provider-creds
+  namespace: crossplane-system
 #@ end
