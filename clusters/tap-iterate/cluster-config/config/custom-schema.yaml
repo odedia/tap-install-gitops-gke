@@ -2,6 +2,9 @@
 #@overlay/match-child-defaults missing_ok=True
 ---
 custom:
+  gitops:
+    write_permissions_user: ""
+    github_token: ""
   acme:
     email: ""
   aws:
