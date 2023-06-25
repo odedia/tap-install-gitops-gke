@@ -122,22 +122,22 @@ spec:
      toFieldPath: spec.forProvider.allocatedStorage
      type: FromCompositeFieldPath
  - name: securityGroupRulePostgres
-    base:
-      apiVersion: ec2.aws.upbound.io/v1beta1
-      kind: SecurityGroupRule
-      spec:
-        forProvider:
-          region: eu-west-1
-          type: ingress
-          fromPort: 5432
-          toPort: 5432
-          protocol: tcp
-          cidrBlocks:
-            - 0.0.0.0/0  #! allow from anywhere inside the VPC (?)
-          securityGroupIdSelector:
-            matchControllerRef: true
-          description: Everywhere
-        deletionPolicy: Delete
+   base:
+     apiVersion: ec2.aws.upbound.io/v1beta1
+     kind: SecurityGroupRule
+     spec:
+       forProvider:
+         region: eu-west-1
+         type: ingress
+         fromPort: 5432
+         toPort: 5432
+         protocol: tcp
+         cidrBlocks:
+           - 0.0.0.0/0  #! allow from anywhere inside the VPC (?)
+         securityGroupIdSelector:
+           matchControllerRef: true
+         description: Everywhere
+       deletionPolicy: Delete
 ---
 apiVersion: services.apps.tanzu.vmware.com/v1alpha1
 kind: ClusterInstanceClass
