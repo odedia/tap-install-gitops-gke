@@ -7,3 +7,4 @@ metadata:
  name: provider-aws
 spec:
  package: #@ "xpkg.upbound.io/crossplane-contrib/provider-aws:{}".format(data.values.custom.operators.crossplane_aws_provider.provider_version)
+#@ end
