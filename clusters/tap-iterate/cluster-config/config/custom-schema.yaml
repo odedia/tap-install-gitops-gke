@@ -19,6 +19,10 @@ custom:
       enabled: true
       provider_version: "v0.6.0"
       provider_package: "crossplane/provider-sql"
+    crossplane_aws_provider:
+      enabled: true
+      provider_version: "v0.33.0"
+      provider_package: "crossplane/provider-aws"
     spring_cloud_gateway:
       enabled: true
       package_version: "2.0.3"
