@@ -128,14 +128,14 @@ spec:
      spec:
        forProvider:
          region: eu-west-1
-         type: egress
+         type: ingress
          fromPort: 5432
          toPort: 5432
          protocol: tcp
          cidrBlocks:
            - 0.0.0.0/0  #! allow from anywhere inside the VPC (?)
          securityGroupIdSelector:
-           matchControllerRef: true
+           matchControllerRef: false
          description: Everywhere
        deletionPolicy: Delete
 ---
