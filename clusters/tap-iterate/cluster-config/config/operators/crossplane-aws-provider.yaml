@@ -135,7 +135,7 @@ spec:
          cidrBlocks:
            - 0.0.0.0/0  #! allow from anywhere inside the VPC (?)
          securityGroupIdSelector:
-           matchControllerRef: false
+           matchControllerRef: true
          description: Everywhere
        deletionPolicy: Delete
 ---
