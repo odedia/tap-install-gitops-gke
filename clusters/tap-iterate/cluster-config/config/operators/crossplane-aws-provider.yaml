@@ -1,6 +1,6 @@
 #@ load("@ytt:data", "data")
 ---
-#@ if data.values.custom.operators.crossplane-aws-provider.enabled:
+#@ if data.values.custom.operators.crossplane_aws_provider.enabled:
 apiVersion: pkg.crossplane.io/v1
 kind: Provider
 metadata:
