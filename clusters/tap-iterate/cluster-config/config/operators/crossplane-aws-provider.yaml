@@ -19,4 +19,16 @@ kind: Secret
 metadata:
   name: aws-provider-creds
   namespace: crossplane-system
+---
+apiVersion: aws.crossplane.io/v1beta1
+kind: ProviderConfig
+metadata:
+ name: default
+spec:
+ credentials:
+   source: Secret
+   secretRef:
+     namespace: crossplane-system
+     name: aws-provider-creds
+     key: creds
 #@ end
