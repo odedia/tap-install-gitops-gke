@@ -4,23 +4,23 @@ profile: view
 ceip_policy_disclosed: true # Installation fails if this is set to 'false'
 
 shared:
-  ingress_domain: #@ data.values.ingress.domain
+  ingress_domain: viewtlv.tanzutime.com
 
 tap_gui:
   ingressEnabled: true
-  service_type: ClusterIP # NodePort for distributions that don't support LoadBalancer
-  tls:
-    secretName: #@ data.values.ingress.contour_tls_secret
-    namespace: #@ data.values.ingress.contour_tls_namespace
+  service_type: ClusterIP
+  # tls:
+  #   secretName: #@ data.values.ingress.contour_tls_secret
+  #   namespace: #@ data.values.ingress.contour_tls_namespace
   app_config:
-    proxy:
-      /metadata-store:
-        target: https://metadata-store-app.metadata-store:8443/api/v1
-        changeOrigin: true
-        secure: false
-        headers:
-          Authorization: #@ data.values.backstage.authtoken
-          X-Custom-Source: project-star
+    # proxy:
+    #   /metadata-store:
+    #     target: https://metadata-store-app.metadata-store:8443/api/v1
+    #     changeOrigin: true
+    #     secure: false
+    #     headers:
+    #       Authorization: #@ data.values.backstage.authtoken
+    #       X-Custom-Source: project-star
     organization:
       name: odedia
     supplyChain:
@@ -30,7 +30,6 @@ tap_gui:
     integrations:
       github:
       - host: github.com
-        token: #@ "{}".format(data.values.backstage.github_token)
     catalog:
       locations:
         - type: url
@@ -62,46 +61,11 @@ tap_gui:
     auth:
       allowGuestAccess: true
       environment: development
-      session:
-        secret: odedias
-      providers:
-        oidc:
-          development:
-            metadataUrl: #@ "{}".format(data.values.backstage.openid.url)
-            clientId: #@ "{}".format(data.values.backstage.openid.client_id)
-            clientSecret: #@ "{}".format(data.values.backstage.openid.client_secret)
-            prompt: auto
     techdocs:
       generator:
           dockerImage: harbor.tanzutime.com/apps/spotify/techdocs:v1.1.2amd
           pullImage: true
           runIn: "docker"
-    kubernetes:
-      serviceLocatorMethod:
-        type: 'multiTenant'
-      clusterLocatorMethods:
-        - type: 'config'
-          clusters:
-            - url: #@ "{}".format(data.values.runclusters.iterate.url)
-              name: iterate-cluster
-              authProvider: serviceAccount
-              serviceAccountToken: #@ "{}".format(data.values.runclusters.iterate.token)
-              skipTLSVerify: true
-            - url: #@ "{}".format(data.values.runclusters.build.url)
-              name: build-cluster
-              authProvider: serviceAccount
-              serviceAccountToken: #@ "{}".format(data.values.runclusters.build.token)
-              skipTLSVerify: true
-            - url: #@ "{}".format(data.values.runclusters.test.url)
-              name: test-cluster
-              authProvider: serviceAccount
-              serviceAccountToken: #@ "{}".format(data.values.runclusters.test.token)
-              skipTLSVerify: true
-            # - url: #@ "{}".format(data.values.runclusters.prod.url)
-            #   name: prod-cluster
-            #   authProvider: serviceAccount
-            #   serviceAccountToken: #@ "{}".format(data.values.runclusters.prod.token)
-            #   skipTLSVerify: true
 metadata_store:
   app_service_type: ClusterIP # (optional) Defaults to LoadBalancer. Change to NodePort for distributions that don't support LoadBalancer
   ingress_enabled: "true"
@@ -109,16 +73,11 @@ metadata_store:
 contour:
   envoy:
     service:
-      annotations:      
-        external-dns.alpha.kubernetes.io/hostname: #@ "*.{}".format(data.values.ingress.domain)
       type: LoadBalancer
 
 accelerator: 
   ingress:
     include: "true"
-  tls:
-    secretName: #@ data.values.ingress.contour_tls_secret                                                 
-    namespace: #@ data.values.ingress.contour_tls_namespace
   server:
     service_type: ClusterIP
 
