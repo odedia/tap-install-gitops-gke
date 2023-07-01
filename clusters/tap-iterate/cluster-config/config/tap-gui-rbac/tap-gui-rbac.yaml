@@ -1,6 +1,15 @@
 #@ load("@ytt:data", "data")
 ---
 apiVersion: v1
+kind: Secret
+metadata:
+  name: tap-gui-viewer
+  namespace: tap-gui
+  annotations:
+    kubernetes.io/service-account.name: tap-gui-viewer
+type: kubernetes.io/service-account-token
+---
+apiVersion: v1
 kind: Namespace
 metadata:
   name: tap-gui
