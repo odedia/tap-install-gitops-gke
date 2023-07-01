@@ -10,9 +10,6 @@ tap_install:
     tap_gui:
       ingressEnabled: true
       service_type: ClusterIP
-      # tls:
-      #   secretName: #@ data.values.ingress.contour_tls_secret
-      #   namespace: #@ data.values.ingress.contour_tls_namespace
       app_config:
         # proxy:
         #   /metadata-store:
@@ -69,19 +66,13 @@ tap_install:
               pullImage: true
               runIn: "docker"
     metadata_store:
-      app_service_type: ClusterIP # (optional) Defaults to LoadBalancer. Change to NodePort for distributions that don't support LoadBalancer
+      app_service_type: ClusterIP
       ingress_enabled: "true"
 
     contour:
       envoy:
         service:
           type: LoadBalancer
-
-    accelerator: 
-      ingress:
-        include: "true"
-      server:
-        service_type: ClusterIP
 
     appliveview:
       ingressEnabled: "true"
