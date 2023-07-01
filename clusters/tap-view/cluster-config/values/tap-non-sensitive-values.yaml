@@ -27,43 +27,43 @@ tap_install:
           github:
           - host: github.com
         catalog:
-          providers:
-            github:
-              organization: "odedia"
-              catalogPath: '/**/*.yaml'
-              filters:
-                branch: 'main' # string
-                repository: '.*'
-              schedule:
-                frequency: { minutes: 30 }
-                timeout: { minutes: 3 }
-          # locations:
-          #   - type: url
-          #     target: https://github.com/odedia/backstage/blob/main/catalog-info.yaml
-          #   - type: url
-          #     target: https://github.com/odedia/yelb/blob/main/catalog-info.yaml
-          #   - type: url
-          #     target: https://github.com/odedia/todo-ui/blob/main/catalog/catalog-info.yaml
-          #   - type: url
-          #     target: https://github.com/odedia/todo-service/blob/main/catalog/catalog-info.yaml
-          #   - type: url
-          #     target: https://github.com/odedia/todo-service/blob/main/catalog/system.yaml
-          #   - type: url
-          #     target: https://github.com/odedia/acme-fitness-store/blob/main/apps/acme-cart/catalog/system.yaml
-          #   - type: url
-          #     target: https://github.com/odedia/acme-fitness-store/blob/main/apps/acme-cart/catalog/catalog-info.yaml
-          #   - type: url
-          #     target: https://github.com/odedia/acme-fitness-store/blob/main/apps/acme-catalog/catalog/catalog-info.yaml
-          #   - type: url
-          #     target: https://github.com/odedia/acme-fitness-store/blob/main/apps/acme-identity/catalog/catalog-info.yaml
-          #   - type: url
-          #     target: https://github.com/odedia/acme-fitness-store/blob/main/apps/acme-order/catalog/catalog-info.yaml
-          #   - type: url                  
-          #     target: https://github.com/odedia/acme-fitness-store/blob/main/apps/acme-payment/catalog/catalog-info.yaml
-          #   - type: url                  
-          #     target: https://github.com/odedia/acme-fitness-store/blob/main/apps/acme-shopping/catalog/catalog-info.yaml
-          #   - type: url
-          #     target: https://github.com/odedia/tanzu-java-web-app/blob/main/catalog/catalog-info.yaml
+          # providers:
+          #   github:
+          #     organization: "odedia"
+          #     catalogPath: '/**/*.yaml'
+          #     filters:
+          #       branch: 'main' # string
+          #       repository: '.*'
+          #     schedule:
+          #       frequency: { minutes: 30 }
+          #       timeout: { minutes: 3 }
+          locations:
+            - type: url
+              target: https://github.com/odedia/backstage/blob/main/catalog-info.yaml
+            - type: url
+              target: https://github.com/odedia/yelb/blob/main/catalog-info.yaml
+            - type: url
+              target: https://github.com/odedia/todo-ui/blob/main/catalog/catalog-info.yaml
+            - type: url
+              target: https://github.com/odedia/todo-service/blob/main/catalog/catalog-info.yaml
+            - type: url
+              target: https://github.com/odedia/todo-service/blob/main/catalog/system.yaml
+            - type: url
+              target: https://github.com/odedia/acme-fitness-store/blob/main/apps/acme-cart/catalog/system.yaml
+            - type: url
+              target: https://github.com/odedia/acme-fitness-store/blob/main/apps/acme-cart/catalog/catalog-info.yaml
+            - type: url
+              target: https://github.com/odedia/acme-fitness-store/blob/main/apps/acme-catalog/catalog/catalog-info.yaml
+            - type: url
+              target: https://github.com/odedia/acme-fitness-store/blob/main/apps/acme-identity/catalog/catalog-info.yaml
+            - type: url
+              target: https://github.com/odedia/acme-fitness-store/blob/main/apps/acme-order/catalog/catalog-info.yaml
+            - type: url                  
+              target: https://github.com/odedia/acme-fitness-store/blob/main/apps/acme-payment/catalog/catalog-info.yaml
+            - type: url                  
+              target: https://github.com/odedia/acme-fitness-store/blob/main/apps/acme-shopping/catalog/catalog-info.yaml
+            - type: url
+              target: https://github.com/odedia/tanzu-java-web-app/blob/main/catalog/catalog-info.yaml
         auth:
           allowGuestAccess: false
           environment: development
