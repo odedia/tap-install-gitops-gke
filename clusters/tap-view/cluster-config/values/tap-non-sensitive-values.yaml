@@ -30,7 +30,7 @@ tap_install:
           providers:
             github:
               organization: "odedia"
-              catalogPath: '**/*.yaml'
+              catalogPath: '/**/*.yaml'
               filters:
                 branch: 'main' # string
                 repository: '.*'
