@@ -1,0 +1,41 @@
+---
+tap_install:
+  values:
+    profile: iterate
+    ceip_policy_disclosed: true
+    buildservice:
+      exclude_dependencies: true
+
+    shared:
+      ingress_domain: iteratetlv.tanzutime.com
+      ingress_issuer: letsencrypt-contour-cluster-issuer
+
+    supply_chain: basic
+
+    api_auto_registration:
+      tap_gui_url: https://tap-gui.viewtlv.tanzutime.com
+      cluster_name: tap-iterate
+
+    ootb_supply_chain_basic:
+      registry:
+        server: harbor.tanzutime.com
+        repository: "apps"
+      gitops:
+        ssh_secret: ""
+      git_implementation: libgit2
+
+    contour:
+      envoy:
+        service:
+          type: LoadBalancer
+
+    grype:
+      namespace: demos
+      targetImagePullSecret: registry-credentials
+
+    appliveview_connector:
+      backend:
+        sslDeactivated: "true"
+        ingressEnabled: true
+        host: appliveview.viewtlv.tanzutime.com
+        port: "80"
