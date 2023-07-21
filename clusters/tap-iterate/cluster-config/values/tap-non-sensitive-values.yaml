@@ -46,3 +46,9 @@ tap_install:
         ref: origin/main
         subPath: gitops-install
         url: https://github.com/odedia/tap-ns-provisioner.git
+      additional_sources:
+      - git:
+          ref: origin/main
+          subPath: databases
+          url: https://github.com/odedia/tap-ns-provisioner.git
+        path: _ytt_lib/databases
