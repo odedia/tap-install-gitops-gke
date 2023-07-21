@@ -39,3 +39,10 @@ tap_install:
         ingressEnabled: true
         host: appliveview.viewtlv.tanzutime.com
         port: "80"
+
+    namespace_provisioner:
+      controller: false
+      gitops_install:
+        ref: origin/main
+        subPath: gitops-install
+        url: https://github.com/odedia/tap-ns-provisioner.git
