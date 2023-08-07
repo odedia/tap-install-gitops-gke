@@ -13,7 +13,7 @@ metadata:
 spec:
   serviceAccountName: tap-installer-sa
   packageRef:
-    refName: full-tbs-deps.tanzu.vmware.com
+    refName: full-deps.buildservice.tanzu.vmware.com
     versionSelection:
       constraints: #@ data.values.custom.tbs_full_dependencies.pkgr_version
 #@ end
