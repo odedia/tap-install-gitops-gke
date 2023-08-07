@@ -1,34 +1,7 @@
 ## Tanzu Sync
 
-### Pre-Requisites
+Tanzu Sync fetches templated Kubernetes configuration from a git repository, applies data values, and deploys it to the cluster.
+This reference implementation comes pre-configured with an install of Tanzu Application Platform.
 
-gcloud beta container clusters create tap-build --region europe-west2 --cluster-version 1.26.5-gke.1200 --machine-type "e2-standard-8" --num-nodes "3" --node-locations europe-west2-a
-
-See also: SETUP-SECRETS.md "Pre-Requisites"
-
-
-### Pre-Installation
-
-See also: SETUP-SECRETS.md "Pre-Installation"
-
-
-### Install Tanzu Sync
-
-1. Generate Tanzu Sync configuration file
-   ```console
-   $ ./tanzu-sync/scripts/configure.sh
-   ```
-   (review, commit, and push the configuration)
-
-2. Deploy
-   ```console
-   $ ./tanzu-sync/scripts/deploy.sh
-   ```
-
-### Verification
-
-- Verify TAP packages are installed 
-  - `kubectl get pkgi -n tap-install`: all should say, "Reconcile succeeded"
-- review the contents of the buildservice's OCI registry to ensure that images are getting uploaded
-  - Ex: should have new `latest` images at https://console.cloud.google.com/gcr/images/cf-k8s-lifecycle-tooling-klt/global/ryanjo/tap/buildservice?project=cf-k8s-lifecycle-tooling-klt
+For detailed documentation, refer to [VMware Tanzu Application Platform Product Documentation](https://docs.vmware.com/en/VMware-Tanzu-Application-Platform/1.5/tap/install-gitops-intro.html).
 
