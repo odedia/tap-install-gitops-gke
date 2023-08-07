@@ -7,7 +7,7 @@ metadata:
   name: tbs-full-deps-repository
   namespace: tap-install
   annotations:
-    kapp.k14s.io/change-group: pkgr
+    kapp.k14s.io/change-group: pkgr 
 spec:
   fetch:
     imgpkgBundle:
