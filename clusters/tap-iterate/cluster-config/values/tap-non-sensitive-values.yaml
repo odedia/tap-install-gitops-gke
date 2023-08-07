@@ -10,8 +10,6 @@ tap_install:
       ingress_domain: iteratetlv.tanzutime.com
       ingress_issuer: letsencrypt-contour-cluster-issuer
 
-    supply_chain: basic
-
     api_auto_registration:
       tap_gui_url: https://tap-gui.viewtlv.tanzutime.com
       cluster_name: tap-iterate
