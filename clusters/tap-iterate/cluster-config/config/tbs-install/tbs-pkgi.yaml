@@ -15,5 +15,5 @@ spec:
   packageRef:
     refName: full-deps.buildservice.tanzu.vmware.com
     versionSelection:
-      constraints: #@ data.values.custom.tbs_full_dependencies.pkgi_version
+      constraints: "> 0.0.0"
 #@ end
