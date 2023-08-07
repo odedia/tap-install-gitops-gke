@@ -4,21 +4,24 @@ source allexports.sh
 
 cp clusters/tap-iterate/cluster-config/config/tap-install/.tanzu-managed/* clusters/tap-build/cluster-config/config/tap-install/.tanzu-managed   (or any new cluster)
 
-./setup-repo tap-iterate sops
+./setup-repo.sh tap-iterate sops
 git push
-cp tanzu-sync-values.sops.yaml ./clusters/tap-iterate/tanzu-sync/app/sensitive-values/tanzu-sync-values.sops.yaml
+mkdir ./clusters/tap-build/tanzu-sync/app/sensitive-values
+cp ./clusters/tap-iterate/tanzu-sync/app/sensitive-values/tanzu-sync-values.sops.yaml ./clusters/tap-build/tanzu-sync/app/sensitive-values/tanzu-sync-values.sops.yaml
 
 export TAP_PKGR_REPO=${INSTALL_REGISTRY_HOSTNAME}/${INSTALL_REPO}/tap-packages
 echo $SOPS_AGE_KEY
 
 
-Update ./clusters/tap-iterate/cluster-config/values/tap-install-values.yaml with:
+
+cd ./clusters/tap-view/
+./tanzu-sync/scripts/configure.sh
+
+Update ./clusters/tap-build/cluster-config/values/tap-install-values.yaml with:
 
   version:
       package_repo_bundle_tag: "1.6.1"
       package_version: "1.6.1"
 
-cd ./clusters/tap-iterate/
-./tanzu-sync/scripts/configure.sh
 ./tanzu-sync/scripts/deploy.sh
 
