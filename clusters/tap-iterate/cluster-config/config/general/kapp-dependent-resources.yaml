@@ -10,7 +10,7 @@ spec:
   serviceAccountName: sync-sa
   fetch:
     - git:
-        ref: origin/main
+        ref: origin/master
         url: https://github.com/odedia/tap-install-gitops-gke
         subPath: clusters/tap-iterate/cluster-config/dependent-resources
         secretRef:
