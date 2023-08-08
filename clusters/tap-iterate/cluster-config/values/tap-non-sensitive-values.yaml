@@ -54,3 +54,4 @@ tap_install:
       - crossplane.tanzu.vmware.com
       - namespace-provisioner.apps.tanzu.vmware.com
       - bitnami.services.tanzu.vmware.com
+      - sso.apps.tanzu.vmware.com
