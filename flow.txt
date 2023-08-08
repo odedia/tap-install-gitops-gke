@@ -12,7 +12,7 @@ echo $SOPS_AGE_KEY
 
 
 
-cd ./clusters/tap-view/
+cd ./clusters/tap-build/
 ./tanzu-sync/scripts/configure.sh
 
 Update ./cluster-config/values/tap-install-values.yaml
