@@ -50,7 +50,7 @@ tap_install:
       # configure a repo that defines which namespaces should exist
       # for simplicity, it's the same one we have been using
       gitops_install:
-        ref: origin/main
+        ref: origin/master
         subPath: clusters/tap-iterate/cluster-config/namespace-provisioner/namespaces
         url: https://github.com/odedia/tap-install-gitops-gke.git
         secretRef:
@@ -61,7 +61,7 @@ tap_install:
         # additional sources points to the resources we want to fill those namespaces with
         - git:
             url: https://github.com/odedia/tap-install-gitops-gke.git
-            ref: origin/main
+            ref: origin/master
             subPath: clusters/tap-iterate/cluster-config/namespace-provisioner/namespace-resources
             secretRef:
               name: git-https
