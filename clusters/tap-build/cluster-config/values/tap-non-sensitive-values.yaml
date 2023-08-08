@@ -56,7 +56,7 @@ tap_install:
         ref: origin/main
         subPath: gitops-install
         url: https://github.com/odedia/tap-ns-provisioner
-    excluded_packages: 
+    excluded_packages:
     - contour.tanzu.vmware.com
     # - grype.scanning.apps.tanzu.vmware.com
-    # - namespace-provisioner.apps.tanzu.vmware.com
+    - namespace-provisioner.apps.tanzu.vmware.com
