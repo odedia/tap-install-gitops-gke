@@ -1,4 +1,4 @@
 #@data/values
 ---
 namespaces:
-  - name: workload-ns
+  - name: demos
