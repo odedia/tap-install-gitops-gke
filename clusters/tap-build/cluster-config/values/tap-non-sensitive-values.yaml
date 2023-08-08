@@ -59,3 +59,4 @@ tap_install:
     excluded_packages:
     - namespace-provisioner.apps.tanzu.vmware.com
     - contour.tanzu.vmware.com
+    - grype.scanning.apps.tanzu.vmware.com
