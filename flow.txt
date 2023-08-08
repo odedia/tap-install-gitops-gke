@@ -2,8 +2,6 @@ In general:
 
 source allexports.sh
 
-cp clusters/tap-iterate/cluster-config/config/tap-install/.tanzu-managed/* clusters/tap-build/cluster-config/config/tap-install/.tanzu-managed   (or any new cluster)
-
 ./setup-repo.sh tap-iterate sops
 git push
 mkdir ./clusters/tap-build/tanzu-sync/app/sensitive-values
@@ -17,7 +15,7 @@ echo $SOPS_AGE_KEY
 cd ./clusters/tap-view/
 ./tanzu-sync/scripts/configure.sh
 
-Update ./clusters/tap-build/cluster-config/values/tap-install-values.yaml with:
+Update ./cluster-config/values/tap-install-values.yaml
 
   version:
       package_repo_bundle_tag: "1.6.1"
