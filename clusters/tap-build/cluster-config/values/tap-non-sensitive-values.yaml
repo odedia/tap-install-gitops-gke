@@ -39,8 +39,6 @@ tap_install:
         ingressEnabled: true
         host: appliveview.viewtlv.tanzutime.com
         port: "80"
-    excluded_packages:
-      - contour.tanzu.vmware.com
     namespace_provisioner:
       controller: false
       additional_sources:
@@ -58,5 +56,6 @@ tap_install:
         ref: origin/main
         subPath: gitops-install
         url: https://github.com/odedia/tap-ns-provisioner
-    # excluded_packages:
-    #   - grype.scanning.apps.tanzu.vmware.com
+    excluded_packages:
+      - namespace-provisioner.apps.tanzu.vmware.com
+      - contour.tanzu.vmware.com
