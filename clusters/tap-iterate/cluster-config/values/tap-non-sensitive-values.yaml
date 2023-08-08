@@ -50,8 +50,3 @@ tap_install:
           subPath: databases
           url: https://github.com/odedia/tap-ns-provisioner.git
         path: _ytt_lib/databases
-    excluded_packages:
-      - crossplane.tanzu.vmware.com
-      - namespace-provisioner.apps.tanzu.vmware.com
-      - bitnami.services.tanzu.vmware.com
-      - sso.apps.tanzu.vmware.com
