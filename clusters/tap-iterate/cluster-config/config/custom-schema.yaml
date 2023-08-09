@@ -57,7 +57,7 @@ custom:
     enabled: true
     pkgr_version: "1.6.1"
     pkgi_version: "0.2.3"
-    pkgi_kp_default_repo: harbor.tanzutime.com/tap/buildservice
+    pkgi_kp_default_repo: aGFyYm9yLnRhbnp1dGltZS5jb20vdGFwL2J1aWxkc2VydmljZQo=
     pkgr_repo_url: harbor.tanzutime.com/tap/full-deps-package-repo
     
   
