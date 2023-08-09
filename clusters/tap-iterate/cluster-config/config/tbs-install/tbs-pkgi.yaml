@@ -12,10 +12,6 @@ metadata:
     kapp.k14s.io/change-rule.1: "delete before deleting pkgi"
 spec:
   values:
-  - name: kp_default_repository
-    value: harbor.tanzutime.com/tap/buildservice
-  #! - secretRef:
-  #!     name: registry-credentials
   serviceAccountName: tap-installer-sa
   packageRef:
     refName: full-deps.buildservice.tanzu.vmware.com
