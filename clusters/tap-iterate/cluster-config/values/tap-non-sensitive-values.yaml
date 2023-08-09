@@ -5,7 +5,7 @@ tap_install:
     ceip_policy_disclosed: true
     buildservice:
       exclude_dependencies: true
-
+      kp_default_repository: harbor.tanzutime.com/tap/buildservice
     shared:
       ingress_domain: iteratetlv.tanzutime.com
       ingress_issuer: letsencrypt-contour-cluster-issuer
