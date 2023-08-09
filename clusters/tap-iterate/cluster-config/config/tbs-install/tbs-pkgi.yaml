@@ -13,7 +13,7 @@ metadata:
 spec:
   values:
   - secretRef:
-      name: buildservice-values-ver-1
+      name: registry-credentials
   serviceAccountName: tap-installer-sa
   packageRef:
     refName: full-deps.buildservice.tanzu.vmware.com
