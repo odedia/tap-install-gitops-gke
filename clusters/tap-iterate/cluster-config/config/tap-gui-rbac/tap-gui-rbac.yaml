@@ -6,8 +6,8 @@ metadata:
   name: tap-gui-viewer
   namespace: tap-gui
   annotations:
-    kubernetes.io/service-account.name: tap-gui-viewer
     kapp.k14s.io/change-rule.0: "upsert after upserting pkgi"
+    kubernetes.io/service-account.name: tap-gui-viewer
 type: kubernetes.io/service-account-token
 ---
 apiVersion: v1

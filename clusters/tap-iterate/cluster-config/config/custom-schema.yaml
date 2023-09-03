@@ -29,7 +29,7 @@ custom:
       crossplane_creds_secret: ""
     spring_cloud_gateway:
       enabled: true
-      package_version: "2.0.3"
+      package_version: "2.0.6"
       package_name: spring-cloud-gateway.tanzu.vmware.com
     tanzu_data_services:
       pkgr_version: "1.9.0"
