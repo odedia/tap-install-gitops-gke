@@ -6,6 +6,9 @@ data:
   secret-access-key: #@ base64.encode(data.values.custom.aws.credentials.secretKey)
 kind: Secret
 metadata:
+  annotations:
+    kapp.k14s.io/change-group: "letsencrypt"
+    kapp.k14s.io/change-rule.0: "upsert after upserting pkgi"
   creationTimestamp: null
   name: prod-route53-credentials-secret
   namespace: cert-manager
