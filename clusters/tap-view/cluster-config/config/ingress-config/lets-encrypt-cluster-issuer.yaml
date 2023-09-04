@@ -13,6 +13,8 @@ metadata:
 apiVersion: cert-manager.io/v1
 kind: ClusterIssuer
 metadata:
+  annotations:
+    kapp.k14s.io/change-rule.0: "upsert after upserting pkgi"
   name: letsencrypt-contour-cluster-issuer
   namespace: tanzu-system-ingress
 spec:
