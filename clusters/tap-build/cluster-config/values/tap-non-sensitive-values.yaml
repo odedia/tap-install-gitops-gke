@@ -47,7 +47,7 @@ tap_install:
             ref: origin/master
             subPath: clusters/tap-build/cluster-config/namespace-provisioner/namespace-resources
             secretRef:
-              name: git-https # this is the new credential
+              name: git-https
               namespace: tap-install
       gitops_install:
         ref: origin/master
@@ -65,4 +65,5 @@ tap_install:
       secrets:
       - name: ootb-supply-chain-testing-scanning-add-source-scanner
 
-
+    metadata_store:
+      ns_for_export_app_cert: "*"
