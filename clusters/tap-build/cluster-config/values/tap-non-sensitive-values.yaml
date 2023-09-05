@@ -49,8 +49,8 @@ tap_install:
         path: _ytt_lib/testing-scanning-supplychain-setup
       gitops_install:
         ref: origin/main
-        subPath: gitops-install
-        url: https://github.com/odedia/tap-ns-provisioner
+        subPath: clusters/tap-build/cluster-config/namespace-provisioner/namespaces
+        url: https://github.com/odedia/tap-install-gitops-gke
     excluded_packages:
     - contour.tanzu.vmware.com
 
