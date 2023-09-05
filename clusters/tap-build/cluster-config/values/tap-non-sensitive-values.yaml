@@ -58,5 +58,10 @@ tap_install:
         url: https://github.com/odedia/tap-ns-provisioner
     excluded_packages:
     - contour.tanzu.vmware.com
-    # - grype.scanning.apps.tanzu.vmware.com
-    # - namespace-provisioner.apps.tanzu.vmware.com
+
+    package_overlays:
+    - name: ootb-supply-chain-testing-scanning
+      secrets:
+      - name: ootb-supply-chain-testing-scanning-add-source-scanner
+
+
