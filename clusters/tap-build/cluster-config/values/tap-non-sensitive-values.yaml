@@ -42,15 +42,21 @@ tap_install:
     namespace_provisioner:
       controller: false
       additional_sources:
-      - git:
-          ref: origin/main
-          subPath: clusters/tap-build/cluster-config/namespace-provisioner/namespaces-resources
-          url: https://github.com/odedia/tap-install-gitops-gke
-        path: _ytt_lib/testing-scanning-supplychain-setup
+        - git:
+            url: https://github.com/odedia/tap-install-gitops-gke.git
+            ref: origin/master
+            subPath: clusters/tap-build/cluster-config/namespace-provisioner/namespaces-resources
+            secretRef:
+              name: git-https # this is the new credential
+              namespace: tap-install
       gitops_install:
-        ref: origin/main
+        ref: origin/master
         subPath: clusters/tap-build/cluster-config/namespace-provisioner/namespaces
-        url: https://github.com/odedia/tap-install-gitops-gke
+        url: https://github.com/odedia/tap-install-gitops-gke.git
+        secretRef:
+          name: sync-git
+          namespace: tanzu-sync
+          create_export: true
     excluded_packages:
     - contour.tanzu.vmware.com
 
