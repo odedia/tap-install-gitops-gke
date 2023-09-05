@@ -32,6 +32,14 @@ tap_install:
     grype:
       namespace: demos
       targetImagePullSecret: registries-credentials
+      metadata_store:
+        url: https://tap-gui.viewtlv.tanzutime.com # Url with http / https
+        caSecret:
+            name: store-ca-cert
+            importFromNamespace: metadata-store-secrets
+        authSecret:
+            name: store-auth-token
+            importFromNamespace: metadata-store-secrets
 
     appliveview_connector:
       backend:
@@ -65,5 +73,3 @@ tap_install:
       secrets:
       - name: ootb-supply-chain-testing-scanning-add-source-scanner
 
-    metadata_store:
-      ns_for_export_app_cert: "*"
