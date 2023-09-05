@@ -35,7 +35,7 @@ tap_install:
       metadata_store:
         url: https://metadata-store.viewtlv.tanzutime.com
         caSecret:
-            name: store-ca-cert
+            name: app-tls-cert
             importFromNamespace: metadata-store-secrets
         authSecret:
             name: store-auth-token
