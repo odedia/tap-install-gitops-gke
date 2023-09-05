@@ -41,6 +41,7 @@ tap_install:
         port: "80"
     namespace_provisioner:
       controller: false
+      sync_period: 30s
       additional_sources:
         - git:
             url: https://github.com/odedia/tap-install-gitops-gke.git
