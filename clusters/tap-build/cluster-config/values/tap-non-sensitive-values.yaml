@@ -44,8 +44,8 @@ tap_install:
       additional_sources:
       - git:
           ref: origin/main
-          subPath: testing-scanning-supplychain
-          url: https://github.com/odedia/tap-ns-provisioner
+          subPath: clusters/tap-build/cluster-config/namespace-provisioner/namespaces-resources
+          url: https://github.com/odedia/tap-install-gitops-gke
         path: _ytt_lib/testing-scanning-supplychain-setup
       gitops_install:
         ref: origin/main
