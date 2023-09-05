@@ -2,6 +2,8 @@ apiVersion: tekton.dev/v1beta1
 kind: Pipeline
 metadata:
   name: java-pipeline
+  annotations:
+    kapp.k14s.io/change-rule.0: "upsert after upserting pkgi"
   labels:
     apps.tanzu.vmware.com/language: java      # (!) required
     apps.tanzu.vmware.com/pipeline: test      # (!) required
