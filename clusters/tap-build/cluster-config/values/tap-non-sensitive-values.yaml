@@ -33,7 +33,7 @@ tap_install:
       namespace: demos
       targetImagePullSecret: registries-credentials
       metadata_store:
-        url: https://tap-gui.viewtlv.tanzutime.com # Url with http / https
+        url: https://metadata-store.viewtlv.tanzutime.com
         caSecret:
             name: store-ca-cert
             importFromNamespace: metadata-store-secrets
