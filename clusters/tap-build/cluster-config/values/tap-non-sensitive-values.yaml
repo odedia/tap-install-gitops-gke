@@ -45,7 +45,7 @@ tap_install:
         - git:
             url: https://github.com/odedia/tap-install-gitops-gke.git
             ref: origin/master
-            subPath: clusters/tap-build/cluster-config/namespace-provisioner/namespaces-resources
+            subPath: clusters/tap-build/cluster-config/namespace-provisioner/namespace-resources
             secretRef:
               name: git-https # this is the new credential
               namespace: tap-install
